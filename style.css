@@ -92,7 +92,7 @@ h1 span {
 .nav-contact {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .btn-tel {
@@ -262,7 +262,7 @@ h1 span {
 
 .hero-actions {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
     justify-content: center;
 }
 
@@ -356,7 +356,7 @@ h1 span {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 1.25rem;
     margin-top: 3rem;
 }
 
@@ -364,7 +364,7 @@ h1 span {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 24px;
-    padding: 3rem;
+    padding: 2.25rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -572,7 +572,7 @@ h1 span {
     }
     
     .timeline-step {
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
     
     .timeline-node {
@@ -721,7 +721,7 @@ h1 span {
 /* Contact Form */
 .contact-form {
     background: var(--bg-card);
-    padding: 3rem;
+    padding: 2.25rem;
     border-radius: 24px;
     border: 1px solid var(--border-color);
 }
@@ -894,7 +894,7 @@ h1 span {
 
 .socials {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .socials a {
@@ -1108,14 +1108,14 @@ h1 span {
 .era-features {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .era-feature-card {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
     background: var(--bg-card);
-    padding: 1.5rem;
+    padding: 1.15rem;
     border-radius: 20px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
@@ -1145,4 +1145,504 @@ h1 span {
 .feature-text p {
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+
+
+/* ==========================================================================
+   About Page Ultra-Modern Bento Grid Styles
+   ========================================================================== */
+
+.about-hero {
+    padding: 6rem 0 3rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(10, 49, 97, 0.15) 0%, rgba(179, 25, 66, 0.05) 50%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.about-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.about-hero .subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Bento Grid Section */
+.about-bento-section {
+    padding: 2rem 0 8rem 0;
+}
+
+.about-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.25rem;
+    grid-template-areas:
+        "mission vision orbit"
+        "stats stats orbit"
+;
+}
+
+.about-bento-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.25rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+}
+
+.about-bento-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(179, 25, 66, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(179, 25, 66, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    transition: background 0.3s ease;
+}
+
+.about-bento-card:hover .card-glow {
+    background: radial-gradient(circle at top left, rgba(179, 25, 66, 0.15) 0%, transparent 60%);
+}
+
+.card-header-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--bg-input);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.card-icon {
+    font-size: 1.75rem;
+}
+
+.about-bento-card h3 {
+    font-family: var(--font-outfit);
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.about-bento-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+/* Area Mappings */
+.card-mission {
+    grid-area: mission;
+}
+
+.card-vision {
+    grid-area: vision;
+}
+
+.card-orbit {
+    grid-area: orbit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-stats {
+    grid-area: stats;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-leader {
+    grid-area: leader;
+}
+
+/* Orbit Visual Component */
+.orbit-visual-container {
+    position: relative;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25rem 0;
+}
+
+.visual-orbit-core {
+    width: 64px;
+    height: 64px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 1.15rem;
+    box-shadow: 0 0 24px rgba(179, 25, 66, 0.45);
+    z-index: 10;
+    font-family: var(--font-outfit);
+}
+
+.visual-orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed var(--border-dashed);
+    border-radius: 50%;
+    transform-origin: center center;
+}
+
+.ring-1 {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -60px;
+    animation: rotateRing 12s linear infinite;
+}
+
+.ring-2 {
+    width: 180px;
+    height: 180px;
+    margin-top: -90px;
+    margin-left: -90px;
+    animation: rotateRing 18s linear infinite reverse;
+}
+
+.ring-3 {
+    width: 240px;
+    height: 240px;
+    margin-top: -120px;
+    margin-left: -120px;
+    animation: rotateRing 24s linear infinite;
+}
+
+.visual-orbit-node {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    font-family: var(--font-outfit);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.node-us {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: var(--primary);
+}
+
+.node-eu {
+    bottom: 50%;
+    left: 0;
+    transform: translate(-50%, 50%);
+    border-color: var(--secondary);
+}
+
+.node-me {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-color: var(--primary);
+}
+
+@keyframes rotateRing {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit-desc {
+    font-size: 0.95rem !important;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+    margin-top: auto;
+}
+
+/* Stats Component */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin: 1.25rem 0;
+}
+
+.stat-item {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.15rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    border-color: rgba(10, 49, 97, 0.4);
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-3px);
+}
+
+.stat-number {
+    font-family: var(--font-outfit);
+    font-size: 2.25rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.stats-desc {
+    font-size: 0.95rem !important;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+    margin-top: auto;
+}
+
+/* Leader Profile Component */
+.leader-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.leader-image-area {
+    display: flex;
+    justify-content: center;
+}
+
+.leader-avatar {
+    width: 180px;
+    height: 180px;
+    background: var(--gradient-primary);
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 15px 30px rgba(179, 25, 66, 0.25);
+    font-family: var(--font-outfit);
+}
+
+.leader-header h3 {
+    font-size: 2.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.leader-title {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.15rem;
+    display: block;
+    margin-bottom: 1.25rem;
+}
+
+.leader-bio {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Navigation Active Support */
+.nav-links a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Responsive Media Queries for Bento Layout */
+@media (max-width: 1100px) {
+    .about-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "mission vision"
+            "orbit orbit"
+            "stats stats"
+;
+    }
+
+    .orbit-visual-container {
+        height: 200px;
+    }
+}
+
+@media (max-width: 900px) {
+    .leader-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .leader-image-area {
+        margin-bottom: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "mission"
+            "vision"
+            "orbit"
+            "stats"
+;
+        grid-gap: 1.25rem;
+    }
+    
+    .about-bento-card {
+        padding: 2.25rem 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .about-hero {
+        padding: 4rem 0 1.5rem 0;
+    }
+}
+
+
+/* ==========================================================================
+   GDPR Cookie Consent Banner Styles
+   ========================================================================== */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    max-width: 420px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.cookie-banner.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.cookie-content {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.cookie-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-top: 0.15rem;
+}
+
+.cookie-text h4 {
+    font-family: var(--font-outfit);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: var(--text-main);
+}
+
+.cookie-text p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.cookie-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1.25rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 10px !important;
+}
+
+@media (max-width: 576px) {
+    .cookie-banner {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: calc(100% - 40px);
+        padding: 1.25rem;
+    }
+    
+    .cookie-icon {
+        font-size: 1.75rem;
+    }
 }

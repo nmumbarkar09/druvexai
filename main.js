@@ -56,3 +56,35 @@ themeToggle.addEventListener('click', () => {
 function updateToggleIcon(theme) {
     toggleIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
 }
+
+
+// ==========================================================================
+// GDPR Cookie Consent Banner Logic
+// ==========================================================================
+(function() {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieDecline = document.getElementById('cookie-decline');
+
+    if (cookieBanner && cookieAccept && cookieDecline) {
+        const consent = localStorage.getItem('cookie-consent');
+        if (!consent) {
+            // Display banner with a premium 1-second delay
+            setTimeout(() => {
+                cookieBanner.classList.remove('hidden');
+            }, 1000);
+        }
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'accepted');
+            cookieBanner.classList.add('hidden');
+            console.log("Cookie consent: Accepted all cookies.");
+        });
+
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem('cookie-consent', 'declined');
+            cookieBanner.classList.add('hidden');
+            console.log("Cookie consent: Declined cookies.");
+        });
+    }
+})();
